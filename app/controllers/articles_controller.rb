@@ -1,6 +1,25 @@
 class ArticlesController < ApplicationController
+  def index
+    #Lista con todos los artículos que hallan en la BBDD
+    #Ver que en la view index.html.erb se trata directamente esta variable
+    @articles = Article.all
+  end
+  
   def new
     @article = Article.new
+  end
+  
+  def edit
+    @article = Article.find(params[:id])
+  end
+  
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      flash[:notice] = "Article was sisccesfully updated!"
+      redirect_to article_path(@article)
+    else
+    end
   end
   
   def create
@@ -12,7 +31,7 @@ class ArticlesController < ApplicationController
     else
       #Si no sale bien, se hace un render de la vista new
       #ver en new.htnl.erb el código para mostrar errores
-      render 'new'
+      render 'edit'
     end
   end
   
