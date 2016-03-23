@@ -13,19 +13,6 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
   
-  def edit
-    #@article = Article.find(params[:id])
-  end
-  
-  def update
-    #@article = Article.find(params[:id])
-    if @article.update(article_params)
-      flash[:success] = "Article was sisccesfully updated!"
-      redirect_to article_path(@article)
-    else
-    end
-  end
-  
   def create
     #render plain:params[:article].inspect
     @article = Article.new(article_params)
@@ -42,6 +29,19 @@ class ArticlesController < ApplicationController
   
   def show
     #@article = Article.find(params[:id])
+  end
+  
+  def edit
+    #@article = Article.find(params[:id])
+  end
+  
+  def update
+    #@article = Article.find(params[:id])
+    if @article.update(article_params)
+      flash[:success] = "Article was susccesfully updated!"
+      redirect_to article_path(@article)
+    else
+    end
   end
   
   def destroy
