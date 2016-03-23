@@ -7,6 +7,8 @@ gem 'rails', '4.2.5'
 #gem 'sqlite3' #Lo muevo al grupo development
 
 gem 'bcrypt', '~> 3.1.7'
+gem 'will_paginate', '3.1.0'
+gem 'bootstrap-will_paginate', '0.0.10'
 
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.6'
