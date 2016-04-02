@@ -16,6 +16,11 @@
           </small>
         </div>
         
+        <!-- For categories -->
+        <% if art.categories.any? %>
+          <p>Categories: <%= render art.categories %></p>
+        <% end %>
+        
         <% if logged_in? && (current_user == art.user || current_user.admin?) %>
           <div class="article-actions">
             <%= link_to "Edit", 
